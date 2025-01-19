@@ -1,0 +1,14 @@
+<div class="card shadow text-center" style="max-width: 380px; min-width: 0px;">
+  <div class="card-body">
+    <h5 class="card-title">{{ project.Name }}</h5>
+    <p>{{ project.Description.text | slice:0:100 }}{{ project.Description.length > 20 ? '...' : '' }}</p>
+    <button class="btn btn-primary" (click)="viewMore()" style="background-color: black; border-color: wheat;">View More</button>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex flex-wrap justify-content-center">
+      <div *ngFor="let technology of project.Stack" class="tag me-2 mb-1">{{ technology }}</div>
+    </div>
+  </div>
+
+  <app-project-details *ngIf="selectedProject" [project]="selectedProject" (close)="closeDetails()">
+  </app-project-details>

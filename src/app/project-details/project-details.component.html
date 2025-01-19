@@ -1,0 +1,23 @@
+<div class="modal" (click)="closeModal($event)" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div *ngIf="project?.image !== ''">
+        <img [src]="project?.image" alt="Project Image" class="img-fluid mb-3">
+      </div>
+      <h3>{{ project.Name }}</h3>
+      <p class="project-text">{{ project.Description.text }}</p>
+
+      <div *ngFor="let feature of project.Description.keyFeatures">
+        <h4>{{ feature.heading }}</h4>
+        <ul>
+          <li *ngFor="let point of feature.points">{{ point }}</li>
+        </ul>
+      </div>
+
+      <p class="project-text">{{ project.Description.overall }}</p>
+
+      <a class="btn btn-primary" style="background-color: black; border-color: black;" href="{{ project.githubLink }}"
+        target="_blank">View on GitHub</a>
+    </div>
+  </div>
+</div>
