@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/saad-website": {},
+    "/saad-website/contact": {},
+    "/saad-website/home": {},
+    "/saad-website/portfolio": {},
+    "/saad-website/resume": {}
+  }
+}
